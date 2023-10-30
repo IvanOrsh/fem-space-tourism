@@ -183,3 +183,7 @@ select {
 .text-white {
   color: hsl(var(--clr-white));
 }
+
+.example-component {
+  background-color: hsl(var(--clr-light) / var(--alpha, 1));
+}

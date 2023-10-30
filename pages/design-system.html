@@ -6,10 +6,29 @@
     <link rel="stylesheet" href="../css/index.css" />
     <title>Design System</title>
   </head>
-  <body>
-    <div class="container bg-dark">
+  <body class="bg-dark">
+    <!-- challenge
+      1. light blue bg, dark text color for 1st div
+      2. white bg, dark text color for 2nd div
+      3. light blue bg 20% alpha, white text for 3rd div
+     -->
+    <div class="container">
       <h1 class="text-accent">Design system</h1>
 
+      <div class="bg-accent text-dark" style="padding: 1rem">
+        light blue bg, with dark text
+      </div>
+
+      <div class="bg-white text-dark" style="padding: 1rem">
+        white bg, with dark text
+      </div>
+
+      <div
+        class="text-white example-component"
+        style="--alpha: 0.2; padding: 1rem"
+      >
+        light blue bg with 20% alpha and white text
+      </div>
       <section id="colors"></section>
     </div>
   </body>
