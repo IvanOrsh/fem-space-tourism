@@ -2,9 +2,25 @@
 /* Custom properties*/
 /* ---------------- */
 :root {
+  /* colors */
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
+
+  /* font-sizes, 400 - base size */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+
+  /* font-families */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
 }
 
 /* ---------------- */
@@ -61,7 +77,11 @@ body {
 
 /* Set core body defaults */
 body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
   line-height: 1.5;
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-dark));
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -75,12 +95,16 @@ label {
   line-height: 1.1;
 }
 
-/* Balance text wrapping on headings */
+/* Balance text wrapping on headings, font-weight */
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6,
+p {
   text-wrap: balance;
+  font-weight: 400;
 }
 
 /* A elements that don't have a class get default styles */
@@ -186,4 +210,62 @@ select {
 
 .example-component {
   background-color: hsl(var(--clr-light) / var(--alpha, 1));
+}
+
+/* typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
 }
