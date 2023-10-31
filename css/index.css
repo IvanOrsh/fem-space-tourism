@@ -383,3 +383,23 @@ select {
 .dot-indicators > *:focus {
   background-color: hsl(var(--clr-white) / 0.5);
 }
+
+.numbered-indicators > * {
+  display: block;
+  cursor: pointer;
+  border: 1px solid hsl(var(--clr-white) / 0.5);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+}
+
+.numbered-indicators > [aria-selected="true"] {
+  color: hsl(var(--clr-dark));
+  background-color: hsl(var(--clr-white));
+}
+
+.numbered-indicators > *:hover,
+.numbered-indicators > *:focus {
+  border: 1px solid hsl(var(--clr-white));
+}

@@ -148,7 +148,7 @@
         <h2 class="numbered-title"><span>03</span> interactive elements</h2>
 
         <!-- navigation -->
-        <div>
+        <div style="display: flex; justify-content: center">
           <nav>
             <ul class="primary-navigation underline-indicators flex">
               <li class="active">
@@ -170,7 +170,7 @@
           </nav>
         </div>
 
-        <div class="flex">
+        <div class="flex" style="--gap: 4rem; justify-content: space-evenly">
           <div style="margin-top: 5rem">
             <!-- explore button -->
             <a
@@ -180,7 +180,7 @@
             >
           </div>
 
-          <div class="flow" style="--flow-space: 4rem; margin-bottom: 50vh">
+          <div class="flow" style="--flow-space: 4rem">
             <!-- Tabs -->
             <div class="tab-list underline-indicators flex">
               <button
@@ -217,6 +217,29 @@
             </div>
 
             <!-- Numbers -->
+            <div
+              class="numbered-indicators flex"
+              style="--gap: 2rem; flex-direction: column"
+            >
+              <button
+                class="text-white bg-dark ff-serif fs-600"
+                aria-selected="true"
+              >
+                1
+              </button>
+              <button
+                class="text-white bg-dark ff-serif fs-600"
+                aria-selected="false"
+              >
+                2
+              </button>
+              <button
+                class="text-white bg-dark ff-serif fs-600"
+                aria-selected="false"
+              >
+                3
+              </button>
+            </div>
           </div>
         </div>
       </section>
