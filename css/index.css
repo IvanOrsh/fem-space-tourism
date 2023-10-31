@@ -365,3 +365,21 @@ select {
 .tab-list {
   --gap: 2.5rem;
 }
+
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: hsl(var(--clr-white) / 0.25);
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white));
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl(var(--clr-white) / 0.5);
+}
