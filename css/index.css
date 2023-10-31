@@ -168,7 +168,6 @@ select {
 /* .flow > * + * */
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
-  outline: 1px solid lime;
 }
 
 .container {
@@ -288,4 +287,40 @@ select {
   font-weight: 700;
   color: hsl(var(--clr-white) / 0.25);
   margin-right: 0.5em;
+}
+
+/* ---------------- */
+/* Components       */
+/* ---------------- */
+
+.large-button {
+  position: relative;
+  display: grid;
+
+  /* create a new stacking context */
+  z-index: 1;
+
+  place-items: center;
+  padding: 0 2em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.large-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(var(--clr-white) / 0.15);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 650ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.5);
 }
