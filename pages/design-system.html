@@ -6,30 +6,45 @@
     <link rel="stylesheet" href="../css/index.css" />
     <title>Design System</title>
   </head>
-  <body class="bg-dark">
-    <!-- challenge
-      1. light blue bg, dark text color for 1st div
-      2. white bg, dark text color for 2nd div
-      3. light blue bg 20% alpha, white text for 3rd div
-     -->
+  <body class="bg-dark text-white">
     <div class="container">
       <h1 class="text-accent">Design system</h1>
 
-      <div class="bg-accent text-dark" style="padding: 1rem">
-        light blue bg, with dark text
-      </div>
+      <section id="colors">
+        <h2><span>01</span> colors</h2>
 
-      <div class="bg-white text-dark" style="padding: 1rem">
-        white bg, with dark text
-      </div>
+        <div class="flex" style="justify-content: center">
+          <div class="text-white bg-dark" style="flex-basis: 33%">
+            <div style="padding: 3rem 1rem 1rem; border: 1px solid white">
+              #0B0D17
+            </div>
+            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+            <p><span class="text-accent">HSL</span> 230°, 35%, 7%</p>
+          </div>
 
-      <div
-        class="text-white example-component"
-        style="--alpha: 0.2; padding: 1rem"
-      >
-        light blue bg with 20% alpha and white text
-      </div>
-      <section id="colors"></section>
+          <div style="flex-basis: 33%">
+            <div
+              class="bg-accent text-dark"
+              style="padding: 3rem 1rem 1rem; border: 1px solid white"
+            >
+              #D0D6F9
+            </div>
+            <p><span class="text-accent">RGB</span> 208, 214, 249</p>
+            <p><span class="text-accent">HSL</span> 231°, 77%, 90%</p>
+          </div>
+
+          <div style="flex-basis: 33%">
+            <div
+              class="bg-white text-dark"
+              style="padding: 3rem 1rem 1rem; border: 1px solid white"
+            >
+              #FFFFFF
+            </div>
+            <p><span class="text-accent">RGB</span> 255, 255, 255</p>
+            <p><span class="text-accent">HSL</span> 0°, 0%, 100%</p>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
