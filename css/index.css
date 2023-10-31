@@ -8,12 +8,12 @@
   --clr-white: 0 0% 100%;
 
   /* font-sizes, 400 - base size */
-  --fs-900: 9.375rem;
-  --fs-800: 6.25rem;
-  --fs-700: 3.5rem;
-  --fs-600: 2rem;
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
   --fs-500: 1.75rem;
-  --fs-400: 1.125rem;
+  --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
 
@@ -21,6 +21,24 @@
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 /* ---------------- */
@@ -71,7 +89,7 @@ ol[role="list"] {
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -82,6 +100,9 @@ body {
   line-height: 1.5;
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -165,6 +186,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 /* .flow > * + * */
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
@@ -174,6 +199,38 @@ select {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+}
+
+.grid-container * {
+  max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+  .grid-container {
+    text-align: left;
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
+  }
+  .grid-container > *:first-child {
+    grid-column: 2/3;
+  }
+  .grid-container > *:last-child {
+    grid-column: 3/4;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+  }
 }
 
 .visually-hidden {
@@ -294,8 +351,10 @@ select {
 /* ---------------- */
 
 .large-button {
+  font-size: 2rem;
+
   position: relative;
-  display: grid;
+  display: inline-grid;
 
   /* create a new stacking context */
   z-index: 1;
@@ -402,4 +461,31 @@ select {
 .numbered-indicators > *:hover,
 .numbered-indicators > *:focus {
   border: 1px solid hsl(var(--clr-white));
+}
+
+/* ----------------------------- */
+/* Page specific - backgrounds   */
+/* ----------------------------- */
+
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+/* home */
+
+.home {
+  background-image: url("/home/background-home-mobile.jpg");
+}
+
+@media (min-width: 35em) {
+  .home {
+    background-position: center center;
+    background-image: url("/home/background-home-tablet.jpg");
+  }
+}
+@media (min-width: 45em) {
+  .home {
+    background-image: url("/home/background-home-desktop.jpg");
+  }
 }

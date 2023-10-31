@@ -4,59 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap"
+      rel="stylesheet"
     />
 
-    <title>Frontend Mentor | Space tourism website</title>
-
     <link rel="stylesheet" href="css/index.css" />
+    <title>Frontend Mentor | Space tourism website</title>
   </head>
-  <body>
-    <!-- 00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
-
-  Explore -->
-
-    <!-- challenges
-    1. hold the content in the middle of the pate
-    2. wrap the content in either flex or grid
-    3. change the gap variable without modifying the original utility class
-    4. use the .visually-hidden on a div (to see what happens)
-
-  -->
-    <div class="container">
-      <div
-        class="grid"
-        style="
-          --gap: 2.5rem;
-          grid-auto-flow: column;
-          grid-auto-columns: 1fr;
-          justify-items: center;
-          align-items: center;
-          min-height: 100vh;
-        "
-      >
-        <div style="background: lime; height: 200px; width: 122px"></div>
-        <div style="background: orangered; height: 300px; width: 122px"></div>
-        <div
-          style="background: palevioletred; height: 400px; width: 122px"
-        ></div>
-        <div style="background: goldenrod; height: 500px; width: 122px"></div>
-        <div style="background: lightblue; height: 600px; width: 122px"></div>
+  <body class="home">
+    <header class="primary-header flex">
+      <div>
+        <img class="logo" src="/shared/logo.svg" alt="space tourism logo" />
       </div>
-      <p class="visually-hidden">This is not supposed to be seen here!</p>
+      <!-- <nav class="dsiplay" style="justify-content: space-evenly">
+        <ul class="primary-navigation underline-indicators flex">
+          <li class="active">
+            <a
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              href="index.html"
+            >
+              <span>00</span>Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              href=""
+            >
+              <span>01</span>Destination</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              href=""
+            >
+              <span>02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond text-white uppercase letter-spacing-2"
+              href=""
+            >
+              <span>03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav> -->
+    </header>
+
+    <div class="grid-container grid-container--home">
+      <div>
+        <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
+          So, you want to travel to
+          <span class="d-block text-white fs-900 ff-serif">Space</span>
+        </h1>
+        <p class="text-accent fs-400">
+          Let’s face it; if you want to go to space, you might as well genuinely
+          go to outer space and not hover kind of on the edge of it. Well sit
+          back, and relax because we’ll give you a truly out of this world
+          experience!
+        </p>
+      </div>
+
+      <div>
+        <a href="#" class="large-button uppercase bg-white ff-serif text-dark"
+          >Explore</a
+        >
+      </div>
     </div>
   </body>
 </html>

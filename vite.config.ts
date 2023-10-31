@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
       __APP_ENV__: JSON.stringify(env.VITE_ENV),
     },
 
-    publicDir: "public",
+    publicDir: "assets",
 
     build: {
       rollupOptions: {
