@@ -1,10 +1,10 @@
 const mobileToggleButton = document.querySelector(".mobile-nav-toggle");
-const primaryNavigation = document.getElementById("primary-navigation");
+const primaryNavigation = document.getElementById(
+  "primary-navigation"
+) as HTMLUListElement;
 
 (mobileToggleButton as HTMLButtonElement).addEventListener("click", () => {
-  const visibility = (primaryNavigation as HTMLUListElement).getAttribute(
-    "data-visible"
-  );
+  const visibility = primaryNavigation.getAttribute("data-visible");
 
   if (visibility === "false") {
     primaryNavigation!.setAttribute("data-visible", "true");

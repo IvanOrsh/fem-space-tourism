@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/index.css" />
     <title>Frontend Mentor | Space tourism website</title>
     <script type="module" src="/src/navigation.ts"></script>
+    <script type="module" src="/src/tabs.ts"></script>
   </head>
   <body class="crew">
     <a class="skip-to-content" href="#main">Skip to content</a>
@@ -39,10 +40,10 @@
           class="primary-navigation underline-indicators flex"
           data-visible="false"
         >
-          <li class="active">
+          <li>
             <a
               class="ff-sans-cond text-white uppercase letter-spacing-2"
-              href="index.html"
+              href="../index.html"
             >
               <span aria-hidden="true">00</span>Home</a
             >
@@ -50,15 +51,15 @@
           <li>
             <a
               class="ff-sans-cond text-white uppercase letter-spacing-2"
-              href=""
+              href="/pages/destination.html"
             >
               <span aria-hidden="true">01</span>Destination</a
             >
           </li>
-          <li>
+          <li class="active">
             <a
               class="ff-sans-cond text-white uppercase letter-spacing-2"
-              href=""
+              href="/pages/crew.html"
             >
               <span aria-hidden="true">02</span>Crew</a
             >
@@ -82,22 +83,58 @@
       </h1>
 
       <!-- Dots -->
-      <div class="dot-indicators flex" style="--gap: 2rem">
-        <button aria-selected="true">
+      <div
+        class="dot-indicators flex"
+        role="tablist"
+        aria-label="crew list"
+        style="--gap: 2rem"
+      >
+        <button
+          role="tab"
+          aria-controls="commander-tab"
+          aria-selected="true"
+          tabindex="0"
+          data-image="commander-image"
+        >
           <span class="visually-hidden">The commander</span>
         </button>
-        <button aria-selected="false">
+        <button
+          role="tab"
+          aria-controls="specialist-tab"
+          aria-selected="false"
+          tabindex="-1"
+          data-image="specialist-image"
+        >
           <span class="visually-hidden">The mission specialist</span>
         </button>
-        <button aria-selected="false">
+        <button
+          role="tab"
+          aria-controls="pilot-tab"
+          aria-selected="false"
+          tabindex="-1"
+          data-image="pilot-image"
+        >
           <span class="visually-hidden">The pilot</span>
         </button>
-        <button aria-selected="false">
+        <button
+          role="tab"
+          aria-controls="engineer-tab"
+          aria-selected="false"
+          tabindex="-1"
+          data-image="engineer-image"
+        >
           <span class="visually-hidden">The crew engineer</span>
         </button>
       </div>
 
-      <article class="crew-details flow">
+      <!-- articles -->
+      <!-- commander -->
+      <article
+        id="commander-tab"
+        tabindex="0"
+        role="tabpanel"
+        class="crew-details flow"
+      >
         <header class="flow flow--space-small">
           <h2 class="fs-600 ff-serif uppercase">Commander</h2>
           <p class="fs-700 uppercase ff-serif">Douglas Hurley</p>
@@ -110,10 +147,94 @@
         </p>
       </article>
 
-      <picture>
+      <!-- engineer -->
+      <article
+        id="engineer-tab"
+        tabindex="-1"
+        role="tabpanel"
+        class="crew-details flow"
+        hidden
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
+          <p class="fs-700 uppercase ff-serif">Anousheh Ansari</p>
+        </header>
+
+        <p>
+          Anousheh Ansari is an Iranian American engineer and co-founder of
+          Prodea Systems. Ansari was the fourth self-funded space tourist, the
+          first self-funded woman to fly to the ISS, and the first Iranian in
+          space.
+        </p>
+      </article>
+
+      <!-- pilot -->
+      <article
+        id="pilot-tab"
+        tabindex="-1"
+        role="tabpanel"
+        class="crew-details flow"
+        hidden
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Pilot</h2>
+          <p class="fs-700 uppercase ff-serif">Victor Glover</p>
+        </header>
+
+        <p>
+          Pilot on the first operational flight of the SpaceX Crew Dragon to the
+          International Space Station. Glover is a commander in the U.S. Navy
+          where he pilots an F/A-18.He was a crew member of Expedition 64, and
+          served as a station systems flight engineer.
+        </p>
+      </article>
+
+      <!-- specialist -->
+      <article
+        id="specialist-tab"
+        tabindex="-1"
+        role="tabpanel"
+        class="crew-details flow"
+        hidden
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
+          <p class="fs-700 uppercase ff-serif">Mark Shuttleworth</p>
+        </header>
+
+        <p>
+          Mark Richard Shuttleworth is the founder and CEO of Canonical, the
+          company behind the Linux-based Ubuntu operating system. Shuttleworth
+          became the first South African to travel to space as a space tourist.
+        </p>
+      </article>
+      <!-- end of articles -->
+
+      <!-- pictures -->
+      <!-- commander -->
+      <picture id="commander-image">
         <source srcset="/crew/image-douglas-hurley.webp" type="image/webp" />
         <img src="/crew/image-douglas-hurley.png" alt="Douglas Hurley" />
       </picture>
+
+      <!-- engineer  -->
+      <picture id="engineer-image" hidden>
+        <source srcset="/crew/image-anousheh-ansari.webp" type="image/webp" />
+        <img src="/crew/image-anousheh-ansari.png" alt="Douglas Hurley" />
+      </picture>
+
+      <!-- pilot  -->
+      <picture id="pilot-image" hidden>
+        <source srcset="/crew/image-victor-glover.webp" type="image/webp" />
+        <img src="/crew/image-victor-glover.png" alt="Douglas Hurley" />
+      </picture>
+
+      <!-- specialist  -->
+      <picture id="specialist-image" hidden>
+        <source srcset="/crew/image-mark-shuttleworth.webp" type="image/webp" />
+        <img src="/crew/image-mark-shuttleworth.png" alt="Douglas Hurley" />
+      </picture>
+      <!-- end of pictures -->
     </main>
 
     <script type="module" src="../src/index.ts"></script>
