@@ -30,31 +30,40 @@ function changeTabPanel(e: MouseEvent) {
     const tabContainer = targetTab.parentElement;
     const mainContainer = tabContainer!.parentElement as HTMLElement;
 
-    mainContainer.querySelectorAll('[role="tabpanel"]').forEach((panel) => {
-      panel.setAttribute("hidden", "true");
-      panel.setAttribute("tabindex", "-1");
-    });
-    mainContainer.querySelector(`#${targetPanel}`)?.removeAttribute("hidden");
+    const tabPanels = mainContainer.querySelectorAll('[role="tabpanel"]');
+    hideContent(tabPanels);
 
-    mainContainer.querySelectorAll("picture").forEach((picture) => {
-      picture.setAttribute("hidden", "true");
-    });
-    mainContainer.querySelector(`#${image}`)?.removeAttribute("hidden");
+    const tabToShow = mainContainer.querySelector(`#${targetPanel}`) as Element;
+    showContent(tabToShow);
+
+    const pictures = mainContainer.querySelectorAll("picture");
+    hideContent(pictures);
+
+    const pictureToShow = mainContainer.querySelector(`#${image}`) as Element;
+    showContent(pictureToShow);
   }
+}
+
+function hideContent(nList: NodeListOf<Element>) {
+  nList.forEach((el) => {
+    el.setAttribute("hidden", "true");
+    el.setAttribute("tabindex", "-1");
+  });
+}
+
+function showContent(el: Element) {
+  el.removeAttribute("hidden");
 }
 
 function changeTabFocus(e: KeyboardEvent) {
   if (e.key === keydownLeft || e.key === keydownRight) {
     const tab = tabs[tabFocus];
     tab.setAttribute("tabindex", "-1");
-  }
 
-  if (e.key === keydownRight) {
-    tabFocus = mod(tabFocus + 1, NUM_OF_TABS);
-  }
-
-  if (e.key === keydownLeft) {
-    tabFocus = mod(tabFocus - 1, NUM_OF_TABS);
+    tabFocus =
+      e.key == keydownRight
+        ? mod(tabFocus + 1, NUM_OF_TABS)
+        : mod(tabFocus - 1, NUM_OF_TABS);
   }
 
   tabs[tabFocus].setAttribute("tabindex", "0");
