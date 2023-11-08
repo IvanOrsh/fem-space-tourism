@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
           ["design-system"]: resolve(__dirname, "pages", "design-system.html"),
           ["destination"]: resolve(__dirname, "pages", "destination.html"),
           ["crew"]: resolve(__dirname, "pages", "crew.html"),
+          ["technology"]: resolve(__dirname, "pages", "technology.html"),
         },
       },
     },
