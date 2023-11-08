@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => {
           main: resolve(__dirname, "index.html"),
           ["design-system"]: resolve(__dirname, "pages", "design-system.html"),
           ["destination"]: resolve(__dirname, "pages", "destination.html"),
+          ["crew"]: resolve(__dirname, "pages", "crew.html"),
         },
       },
     },
